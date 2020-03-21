@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sat Mar 21 2020 16:33:03 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/layout/App.jsx
+
+
+Created files:
+* .autogit/logs/log-21-2-2020-15-12-26.txt
+* src/features/event/EventDashboard/EventDashboard.jsx
+* src/features/nav/NavBar/NavBar.jsx
+
+
+Deleted files:
+
+
+Renamed files:
