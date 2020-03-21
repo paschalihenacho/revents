@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import EventListItem from './EventListItem';
 
 class EventList extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <Fragment>
+                <EventListItem />
+                <EventListItem />
+                <EventListItem />
+            </Fragment>
         )
     }
 }
