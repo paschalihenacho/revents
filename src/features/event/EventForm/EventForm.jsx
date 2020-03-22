@@ -2,21 +2,42 @@ import React, { Component } from 'react'
 import { Segment, Form, Button } from 'semantic-ui-react';
 
 class EventForm extends Component {
+  state = {
+    title: '',
+    date: '',
+    city: '',
+    vanue: '',
+    hostedBy: ''
+  }
 
   handleFormSubmit = (evt) => {
     evt.preventDefault();
-    console.log(this.refs.title)
+    console.log(this.state)
+  }
+
+  // Talking to Virture DOM
+  handleInputChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    })
   }
 
     render() {
-      //Destructuring
+      //Destructuring properties
       const {cancelFormOpen} = this.props;
+      const {title, date, city, } = this.state;
         return (
       <Segment>
-        <Form onSubmit={this.handleFormSubmit}>
+        <Form onSubmit={this.handleFormSubmit} autoComplete='off'>
           <Form.Field>
             <label>Event Title</label>
-            <input ref='title' placeholder='Event Title' />
+            {/* Each Input property is going to have [name, onchange, value] */}
+            <input name='title' 
+            onChange={this.handleInputChange} 
+            value={title}
+             placeholder='Event Title' 
+             />
+
           </Form.Field>
           <Form.Field>
             <label>Event Date</label>
