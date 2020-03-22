@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Sat Mar 21 2020 20:04:13 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/event/EventDashboard/EventDashboard.jsx
+* src/features/event/EventForm/EventForm.jsx
+* src/features/event/EventList/EventListItem.jsx
+
+
+Created files:
+* .autogit/logs/log-21-2-2020-19-34-3.txt
+* public/assets/user.png
+
+
+Deleted files:
+
+
+Renamed files:

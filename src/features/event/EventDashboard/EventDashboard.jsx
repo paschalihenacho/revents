@@ -71,11 +71,11 @@ class EventDashboard extends Component {
     newEvent.hostPhotoURL = "/assets/user.png";
     this.setState(({ events }) => ({
       // ...this.state.events takes our array of events and spread them out.
-        events: [...this.state.events, newEvent]
-        isOpen: false
+      events: [...this.state.events, newEvent],
+      isOpen: false
     }));
   };
-    
+
   render() {
     const { events, isOpen } = this.state;
     return (
