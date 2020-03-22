@@ -20,7 +20,11 @@ class EventForm extends Component {
 
   handleFormSubmit = evt => {
     evt.preventDefault();
-    this.props.createEvent(this.state);
+    if (this.state.id) {
+      this.props.updatedEvent(this.state);
+    } else {
+      this.props.createEvent(this.state);
+    }
   };
 
   // Talking to Virture DOM

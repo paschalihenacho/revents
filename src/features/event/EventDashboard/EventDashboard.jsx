@@ -114,12 +114,23 @@ class EventDashboard extends Component {
     }));
   };
 
+  // #1 create the Method to delete an event
+  handleDeleteEvent = id => {
+    this.setState(({ events }) => ({
+      events: events.filter(e => e.id !== id)
+    }));
+  };
+
   render() {
     const { events, isOpen, selectedEvent } = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
-          <EventList events={events} selectedEvent={this.handleSelectEvent} />
+          <EventList
+            events={events}
+            selectedEvent={this.handleSelectEvent}
+            deleteEvent={this.handleDeleteEvent}
+          />
         </Grid.Column>
         <Grid.Column width={6}>
           <Button
@@ -129,8 +140,8 @@ class EventDashboard extends Component {
           />
           {isOpen && (
             <EventForm
-                        key={selectedEvent ? selectedEvent.id : 0} //when you click on (View) different events the EventForm updates
-                    updatedEvent={this.handleUpdateEvent}    
+              key={selectedEvent ? selectedEvent.id : 0} //when you click on (View) different events the EventForm updates
+              updatedEvent={this.handleUpdateEvent}
               selectedEvent={selectedEvent}
               createEvent={this.handleCreateEvent}
               cancelFormOpen={this.handleFormCancel}
