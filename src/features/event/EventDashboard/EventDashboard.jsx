@@ -58,14 +58,30 @@ const eventsFromDashboard = [
 class EventDashboard extends Component {
   state = {
     events: eventsFromDashboard,
-    isOpen: false
+      isOpen: false,
+    selectedEvent: null
   };
-  handlerIsOpenToggle = () => {
-    this.setState(({ isOpen }) => ({
-      isOpen: !isOpen
-    }));
-  };
+    
+//   handlerIsOpenToggle = () => {
+//     this.setState(({ isOpen }) => ({
+//       isOpen: !isOpen
+//     }));
+//   };
+    
+    handleCreateFormOpen = () => {
+        this.setState({
+            isOpen: true,
+            selectedEvent: null
+    })
+}
 
+    handleFormCancelEvent = (event) => {
+        this.setState({
+            selectedEvent: event,
+            isOpen: true
+        })
+    }
+    
   handleCreateEvent = newEvent => {
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
@@ -75,9 +91,16 @@ class EventDashboard extends Component {
       isOpen: false
     }));
   };
+    
+    handleSelectEvent = (event) => {
+        this.setState({
+            selectedEvent: event,
+            isOpen: true
+      })
+  }
 
   render() {
-    const { events, isOpen } = this.state;
+    const { events, isOpen, selectedEvent } = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
