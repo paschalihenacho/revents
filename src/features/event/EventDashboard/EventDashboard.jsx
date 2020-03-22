@@ -8,7 +8,7 @@ const eventsFromDashboard = [
   {
     id: "1",
     title: "Trip to Tower of London",
-    date: "2018-03-27T11:00:00+00:00",
+    date: "2018-03-27",
     category: "culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
@@ -32,7 +32,7 @@ const eventsFromDashboard = [
   {
     id: "2",
     title: "Trip to Punch and Judy Pub",
-    date: "2018-03-28T14:00:00+00:00",
+    date: "2018-03-28",
     category: "drinks",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
@@ -99,6 +99,21 @@ class EventDashboard extends Component {
     });
   };
 
+  handleUpdateEvent = updatedEvent => {
+    this.setState(({ events }) => ({
+      events: events.map(event => {
+        //this "event is the currently existed event on our state"
+        if (event.id === updatedEvent.id) {
+          return { ...updatedEvent };
+        } else {
+          return event;
+        }
+      }),
+      isOpen: false,
+      selectedEvent: null
+    }));
+  };
+
   render() {
     const { events, isOpen, selectedEvent } = this.state;
     return (
@@ -114,9 +129,11 @@ class EventDashboard extends Component {
           />
           {isOpen && (
             <EventForm
+                        key={selectedEvent ? selectedEvent.id : 0} //when you click on (View) different events the EventForm updates
+                    updatedEvent={this.handleUpdateEvent}    
               selectedEvent={selectedEvent}
               createEvent={this.handleCreateEvent}
-              cancelFormOpen={this.handleFormCancelEvent}
+              cancelFormOpen={this.handleFormCancel}
             />
           )}
         </Grid.Column>
