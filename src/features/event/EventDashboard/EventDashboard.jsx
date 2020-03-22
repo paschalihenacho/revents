@@ -58,30 +58,30 @@ const eventsFromDashboard = [
 class EventDashboard extends Component {
   state = {
     events: eventsFromDashboard,
-      isOpen: false,
+    isOpen: false,
     selectedEvent: null
   };
-    
-//   handlerIsOpenToggle = () => {
-//     this.setState(({ isOpen }) => ({
-//       isOpen: !isOpen
-//     }));
-//   };
-    
-    handleCreateFormOpen = () => {
-        this.setState({
-            isOpen: true,
-            selectedEvent: null
-    })
-}
 
-    handleFormCancelEvent = (event) => {
-        this.setState({
-            selectedEvent: event,
-            isOpen: true
-        })
-    }
-    
+  //   handlerIsOpenToggle = () => {
+  //     this.setState(({ isOpen }) => ({
+  //       isOpen: !isOpen
+  //     }));
+  //   };
+
+  handleCreateFormOpen = () => {
+    this.setState({
+      isOpen: true,
+      selectedEvent: null
+    });
+  };
+
+  handleFormCancelEvent = event => {
+    this.setState({
+      selectedEvent: event,
+      isOpen: true
+    });
+  };
+
   handleCreateEvent = newEvent => {
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
@@ -91,31 +91,32 @@ class EventDashboard extends Component {
       isOpen: false
     }));
   };
-    
-    handleSelectEvent = (event) => {
-        this.setState({
-            selectedEvent: event,
-            isOpen: true
-      })
-  }
+
+  handleSelectEvent = event => {
+    this.setState({
+      selectedEvent: event,
+      isOpen: true
+    });
+  };
 
   render() {
     const { events, isOpen, selectedEvent } = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
-          <EventList events={events} />
+          <EventList events={events} selectedEvent={this.handleSelectEvent} />
         </Grid.Column>
         <Grid.Column width={6}>
           <Button
-            onClick={this.handlerIsOpenToggle}
+            onClick={this.handleCreateFormOpen}
             positive
             content="Create Event"
           />
           {isOpen && (
             <EventForm
+              selectedEvent={selectedEvent}
               createEvent={this.handleCreateEvent}
-              cancelFormOpen={this.handlerIsOpenToggle}
+              cancelFormOpen={this.handleFormCancelEvent}
             />
           )}
         </Grid.Column>
