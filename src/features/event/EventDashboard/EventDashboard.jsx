@@ -6,7 +6,7 @@ import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 
-const mapState = (state) => ({
+const mapState = state => ({
   events: state.events
 });
 
@@ -60,15 +60,8 @@ class EventDashboard extends Component {
   };
 
   handleUpdateEvent = updatedEvent => {
+    this.props.updateEvent(updateEvent);
     this.setState(({ events }) => ({
-      events: events.map(event => {
-        //this "event is the currently existed event on our state"
-        if (event.id === updatedEvent.id) {
-          return { ...updatedEvent };
-        } else {
-          return event;
-        }
-      }),
       isOpen: false,
       selectedEvent: null
     }));

@@ -19,11 +19,11 @@ export const updateEvent = (event) => {
     }
 }
 // action creator
-export const deleteEvent = (event) => {
+export const deleteEvent = (eventId) => {
     return {
         type: DELETE_EVENT,
         payload: {
-            event
+            eventId
         }
     }
 }
