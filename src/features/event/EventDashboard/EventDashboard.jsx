@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
-import { content, connect } from 'react-redux';
+import { connect } from "react-redux";
 import EventList from "../EventList/EventList";
 import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
-import {createEvent, deleteEvent, updatedEvent} from '../eventActions'
+import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 
 const mapState = (state) => ({
   events: state.events
-})
+});
+
+const actions = {
+  createEvent,
+  deleteEvent,
+  updateEvent
+};
 
 class EventDashboard extends Component {
   state = {
@@ -16,11 +22,11 @@ class EventDashboard extends Component {
     selectedEvent: null
   };
 
-  //   handlerIsOpenToggle = () => {
-  //     this.setState(({ isOpen }) => ({
-  //       isOpen: !isOpen
-  //     }));
-  //   };
+  // handleIsOpenToggle = () => {
+  //   this.setState(({ isOpen }) => ({
+  //     isOpen: !isOpen
+  //   }));
+  // }
 
   handleCreateFormOpen = () => {
     this.setState({
@@ -70,9 +76,7 @@ class EventDashboard extends Component {
 
   // #1 create the Method to delete an event
   handleDeleteEvent = id => {
-    this.setState(({ events }) => ({
-      events: events.filter(e => e.id !== id)
-    }));
+    this.props.deleteEvent(id);
   };
 
   render() {
@@ -108,4 +112,4 @@ class EventDashboard extends Component {
   }
 }
 
-export default connect(mapState) (EventDashboard);
+export default connect(mapState, actions)(EventDashboard);

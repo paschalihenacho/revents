@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 24 2020 14:47:16 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/reducers/rootReducer.js
+* src/features/event/EventDashboard/EventDashboard.jsx
+* src/features/event/eventReducer.js
+
+
+Created files:
+* .autogit/logs/log-24-2-2020-14-17-4.txt
+
+
+Deleted files:
+
+
+Renamed files:
