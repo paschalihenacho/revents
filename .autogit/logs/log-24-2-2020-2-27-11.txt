@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 24 2020 02:27:11 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/store/configureStore.js
+* src/features/testarea/TestComponent.jsx
+* src/index.js
+
+
+Created files:
+* .autogit/logs/log-24-2-2020-1-44-43.txt
+* src/features/testarea/testActions.js
+* src/features/testarea/testConstants.js
+* src/features/testarea/testReducer.js
+
+
+Deleted files:
+
+
+Renamed files:
