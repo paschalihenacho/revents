@@ -1,3 +1,8 @@
+import { createStore } from "redux"
+import testReducer from "../../features/testarea/testReducer";
+
 export const configureStore = () => {
-    const
+    const store = createStore(testReducer)
+
+    return store;
 }
