@@ -6,7 +6,7 @@ import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 
-const mapState = state => ({
+const mapState = (state) => ({
   events: state.events
 });
 
