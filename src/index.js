@@ -10,7 +10,7 @@ const rootEl = document.getElementById("root");
 let render = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+    <App />
     </BrowserRouter>,
 
     rootEl

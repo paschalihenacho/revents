@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import { Menu, Header } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 const SettingsNav = () => {
-    return (
-        <div>
-            <h1>Settings Nav</h1>
-        </div>
-    )
-}
+  return (
+    <Fragment>
+      <Menu vertical>
+        <Header icon="user" attached inverted color="grey" content="Profile" />
+        <Menu.Item as={NavLink} to="/settings/basic">
+          Basics
+        </Menu.Item>
+        <Menu.Item as={NavLink} to="/settings/about">
+          About Me
+        </Menu.Item>
+        <Menu.Item as={NavLink} to="/settings/photos">
+          My Photos
+        </Menu.Item>
+      </Menu>
 
-export default SettingsNav
+      <Menu vertical>
+        <Header
+          icon="settings"
+          attached
+          inverted
+          color="grey"
+          content="Account"
+        />
+        <Menu.Item as={NavLink} to="/settings/account">
+          My Account
+        </Menu.Item>
+      </Menu>
+    </Fragment>
+  );
+};
+
+export default SettingsNav;

@@ -1,0 +1,28 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 23 2020 02:26:02 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/app/layout/App.jsx
+* src/index.js
+
+
+Created files:
+* src/features/event/EventDetailed/EventDashboardPage.jsx
+* src/features/home/HomePage.jsx
+* src/features/user/PeopleDashboard/PeopleDashboard.jsx
+* src/features/user/Settings/AboutPage.jsx
+* src/features/user/Settings/AccountPage.jsx
+* src/features/user/Settings/BasicPage.jsx
+* src/features/user/Settings/PhotosPage.jsx
+* src/features/user/Settings/SettingsDashboard.jsx
+* src/features/user/Settings/SettingsNav.jsx
+* src/features/user/UserDetailed/UserDetailedPage.jsx
+
+
+Deleted files:
+
+
+Renamed files:
