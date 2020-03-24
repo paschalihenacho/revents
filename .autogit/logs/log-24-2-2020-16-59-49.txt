@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 24 2020 16:59:49 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/event/EventDashboard/EventDashboard.jsx
+
+
+Created files:
+* .autogit/logs/log-24-2-2020-16-17-45.txt
+
+
+Deleted files:
+
+
+Renamed files:

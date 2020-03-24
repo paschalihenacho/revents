@@ -6,7 +6,7 @@ import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 
-const mapState = (state) => ({
+const mapState = state => ({
   events: state.events
 });
 
@@ -45,9 +45,9 @@ class EventDashboard extends Component {
   handleCreateEvent = newEvent => {
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
+    this.props.createEvent(newEvent);
     this.setState(({ events }) => ({
       // ...this.state.events takes our array of events and spread them out.
-      events: [...this.state.events, newEvent],
       isOpen: false
     }));
   };
@@ -60,7 +60,7 @@ class EventDashboard extends Component {
   };
 
   handleUpdateEvent = updatedEvent => {
-    this.props.updateEvent(updateEvent);
+    this.props.updateEvent(updatedEvent);
     this.setState(({ events }) => ({
       isOpen: false,
       selectedEvent: null
@@ -69,6 +69,9 @@ class EventDashboard extends Component {
 
   // #1 create the Method to delete an event
   handleDeleteEvent = id => {
+    // this.setState(({ events }) => ({
+    //   events: events.filter(e => e.id !== id)
+    // }));
     this.props.deleteEvent(id);
   };
 
