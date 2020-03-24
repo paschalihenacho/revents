@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
+import { content, connect } from 'react-redux';
 import EventList from "../EventList/EventList";
 import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
+import {createEvent, deleteEvent, updatedEvent} from '../eventActions'
 
+const mapState = (state) => ({
+  events: state.events
+})
 
+class EventDashboard extends Component {
+  state = {
+    isOpen: false,
+    selectedEvent: null
+  };
 
   //   handlerIsOpenToggle = () => {
   //     this.setState(({ isOpen }) => ({
@@ -66,7 +76,8 @@ import cuid from "cuid";
   };
 
   render() {
-    const { events, isOpen, selectedEvent } = this.state;
+    const { isOpen, selectedEvent } = this.state;
+    const { events } = this.props;
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -97,4 +108,4 @@ import cuid from "cuid";
   }
 }
 
-export default EventDashboard;
+export default connect(mapState) (EventDashboard);
