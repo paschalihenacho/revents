@@ -13,9 +13,9 @@ const EventDetailedSidebar = ({ attendees }) => {
         secondary
         inverted
         color="teal"
-          >
-              {attendees && attendees.length} {}
-        2 People Going
+      >
+        {attendees && attendees.length}{" "}
+        {attendees && attendees.length === 1 ? "Person" : "People"} Going
       </Segment>
       <Segment attached>
         <Item.Group relaxed divided>
