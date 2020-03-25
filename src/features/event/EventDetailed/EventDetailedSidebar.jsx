@@ -2,7 +2,8 @@ import React from 'react'
 import { Fragment } from 'react'
 import { Segment, Item, Label } from 'semantic-ui-react'
 
-const EventDetailedSidebar = () => {
+const EventDetailedSidebar = (attendees) => {
+    const isHost = false
     return (
     <Fragment>
       <Segment

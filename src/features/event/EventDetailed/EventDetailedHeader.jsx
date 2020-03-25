@@ -19,7 +19,7 @@ const EventDetailedHeader = ({ event }) => {
     <Segment.Group>
       <Segment basic attached="top" style={{ padding: "0" }}>
         <Image
-          src={"/assets/categoryImages/${event.category}.jpg"}
+          src={`/assets/categoryImages/${event.category}.jpg`}
           fluid
           style={eventImageStyle}
         />
