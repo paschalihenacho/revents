@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
 import EventList from "../EventList/EventList";
-import EventForm from "../EventForm/EventForm";
 import cuid from "cuid";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 
@@ -88,20 +87,7 @@ class EventDashboard extends Component {
           />
         </Grid.Column>
         <Grid.Column width={6}>
-          <Button
-            onClick={this.handleCreateFormOpen}
-            positive
-            content="Create Event"
-          />
-          {isOpen && (
-            <EventForm
-              key={selectedEvent ? selectedEvent.id : 0} //when you click on (View) different events the EventForm updates
-              updatedEvent={this.handleUpdateEvent}
-              selectedEvent={selectedEvent}
-              createEvent={this.handleCreateEvent}
-              cancelFormOpen={this.handleFormCancel}
-            />
-          )}
+          <h2>Activity Feed</h2>
         </Grid.Column>
       </Grid>
     );

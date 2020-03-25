@@ -13,7 +13,7 @@ const mapState = (state, ownProps) => {
     hostedBy: ""
   };
 
-  if (eventId && state.event.length > 0) {
+  if (eventId && state.events.length > 0) {
     event = state.events.filter(event => event.id === eventId)[0];
   }
 
@@ -51,7 +51,6 @@ class EventForm extends Component {
 
   render() {
     //Destructuring properties
-    const { cancelFormOpen } = this.props;
     const { title, date, city, vanue, hostedBy } = this.state;
     return (
       <Segment>
