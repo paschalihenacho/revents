@@ -1,6 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
-import { Segment, Item, Label, List, ItemContent } from "semantic-ui-react";
+import { Segment, Item, Label } from "semantic-ui-react";
 
 const EventDetailedSidebar = ({ attendees }) => {
   const isHost = false;
@@ -13,7 +13,8 @@ const EventDetailedSidebar = ({ attendees }) => {
         secondary
         inverted
         color="teal"
-      >
+          >
+              {attendees && attendees.length} {}
         2 People Going
       </Segment>
       <Segment attached>
@@ -30,14 +31,8 @@ const EventDetailedSidebar = ({ attendees }) => {
                 </Label>
 
                 <Item.Image size="tiny" src={attendee.photoURL} />
-                <Item.Content>
-                  <Item.Header
-                    verticalAlign="middle"
-                    style={{ width: "20px" }}
-                    as="h3"
-                  >
-                    {attendee.name}
-                  </Item.Header>
+                <Item.Content verticalAlign="middle">
+                  <Item.Header as="h3">{attendee.name}</Item.Header>
                 </Item.Content>
               </Item>
             ))}
