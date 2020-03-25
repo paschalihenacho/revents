@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 24 2020 21:14:54 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/event/EventDetailed/EventDetailedInfo.jsx
+* src/features/event/EventDetailed/EventDetailedSidebar.jsx
+
+
+Created files:
+* .autogit/logs/log-24-2-2020-20-44-45.txt
+
+
+Deleted files:
+
+
+Renamed files:
