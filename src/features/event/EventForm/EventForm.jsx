@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Segment, Form, Button } from "semantic-ui-react";
 
 const mapState = (state, ownProps) => {
-  const eventId = ownProps.macht.params.id;
+  const eventId = ownProps.match.params.id;
 
   let event = {
     title: "",
@@ -11,19 +11,19 @@ const mapState = (state, ownProps) => {
     city: "",
     vanue: "",
     hostedBy: ""
-  }
+  };
 
   if (eventId && state.event.length > 0) {
-    event = state.events.filter(event => event.id === eventId)[0]
+    event = state.events.filter(event => event.id === eventId)[0];
   }
 
   return {
     event
-  }
-}
+  };
+};
 
 class EventForm extends Component {
-  state = {...this.props.event};
+  state = { ...this.props.event };
 
   componentDidMount() {
     if (this.props.selectedEvent !== null) {
@@ -115,4 +115,4 @@ class EventForm extends Component {
   }
 }
 
-export default connect(mapState) (EventForm);
+export default connect(mapState)(EventForm);
