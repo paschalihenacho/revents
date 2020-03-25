@@ -1,7 +1,8 @@
 import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 
-class ScrollToTop extends React.Component {
+class ScrollToTop extends Component {
     componentDidUpdate(prevProps) {
       if (
         this.props.location.pathname !== prevProps.location.pathname
@@ -11,7 +12,7 @@ class ScrollToTop extends React.Component {
     }
   
     render() {
-      return null;
+      return this.props.children;
     }
   }
   
