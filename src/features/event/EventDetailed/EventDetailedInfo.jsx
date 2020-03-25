@@ -1,8 +1,7 @@
 import React from "react";
 import { Segment, Grid, Icon, Button } from "semantic-ui-react";
-import { enGB } from "date-fns/esm/locale";
 
-const EventDetailedInfo = ({event}) => {
+const EventDetailedInfo = ({ event }) => {
   return (
     <Segment.Group>
       <Segment attached="top">
@@ -39,7 +38,7 @@ const EventDetailedInfo = ({event}) => {
         </Grid>
       </Segment>
     </Segment.Group>
-  ); 
+  );
 };
 
 export default EventDetailedInfo;
