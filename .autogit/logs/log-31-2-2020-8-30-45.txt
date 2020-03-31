@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 31 2020 08:30:45 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* public/index.html
+* src/features/testarea/TestComponent.jsx
+
+
+Created files:
+* src/features/testarea/TestPlaceInput.jsx
+
+
+Deleted files:
+
+
+Renamed files:
