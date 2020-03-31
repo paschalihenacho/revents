@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { composeValidators, combineValidators, isRequired, hasLengthGreaterThan} from 'revalidate';
+import {
+  composeValidators,
+  combineValidators,
+  isRequired,
+  hasLengthGreaterThan
+} from "revalidate";
 import { reduxForm, Field } from "redux-form";
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
 import { createEvent, updateEvent } from "../eventActions";
@@ -29,15 +34,17 @@ const actions = {
 };
 
 const validate = combineValidators({
-  title: isRequired({ message: 'The event title is required' }),
-  category: isRequired({ message: 'The category is required' }),
+  title: isRequired({ message: "The event title is required" }),
+  category: isRequired({ message: "The category is required" }),
   description: composeValidators(
-    isRequired({ message: 'Please enter a description' }), 
-    hasLengthGreaterThan(4)({message: 'Description needs to be at least 5 characters'})
+    isRequired({ message: "Please enter a description" }),
+    hasLengthGreaterThan(4)({
+      message: "Description needs to be at least 5 characters"
+    })
   )(),
-  city: isRequired('city'),
-  venue: isRequired('venue')
-})
+  city: isRequired("city"),
+  venue: isRequired("venue")
+});
 
 const category = [
   { key: "", text: "select category", value: "" },
@@ -67,7 +74,13 @@ class EventForm extends Component {
   };
 
   render() {
-    const { history, initialValues } = this.props;
+    const {
+      history,
+      initialValues,
+      invalid,
+      submitting,
+      pristine
+    } = this.props;
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -111,7 +124,11 @@ class EventForm extends Component {
                 placeholder="Event Date"
               />
 
-              <Button positive type="submit">
+              <Button
+                disabled={invalid || submitting || pristine}
+                positive
+                type="submit"
+              >
                 Submit
               </Button>
               <Button
