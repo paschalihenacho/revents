@@ -13,6 +13,7 @@ import cuid from "cuid";
 import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";
 import SelectInput from "../../../app/common/form/SelectInput";
+import DateInput from "../../../app/common/form/DateInput";
 
 const mapState = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
@@ -43,7 +44,8 @@ const validate = combineValidators({
     })
   )(),
   city: isRequired("city"),
-  venue: isRequired("venue")
+  venue: isRequired("venue"),
+  date: isRequired("date")
 });
 
 const category = [
@@ -120,7 +122,7 @@ class EventForm extends Component {
               />
               <Field
                 name="date"
-                component={TextInput}
+                component={DateInput}
                 placeholder="Event Date"
               />
 
