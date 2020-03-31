@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { composeValidators, combineValidators, isRequired, hasLengthGreaterThan} from 'revalidate';
 import { reduxForm, Field } from "redux-form";
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
 import { createEvent, updateEvent } from "../eventActions";
@@ -27,6 +28,17 @@ const actions = {
   updateEvent
 };
 
+const validate = combineValidators({
+  title: isRequired({ message: 'The event title is required' }),
+  category: isRequired({ message: 'The category is required' }),
+  description: composeValidators(
+    isRequired({ message: 'Please enter a description' }), 
+    hasLengthGreaterThan(4)({message: 'Description needs to be at least 5 characters'})
+  )(),
+  city: isRequired('city'),
+  venue: isRequired('venue')
+})
+
 const category = [
   { key: "", text: "select category", value: "" },
   { key: "drinks", text: "Drinks", value: "drinks" },
@@ -50,11 +62,12 @@ class EventForm extends Component {
         hostedBy: "Bob"
       };
       this.props.createEvent(newEvent);
-      this.props.history.push(`/events`);
+      this.props.history.push(`/events/${newEvent.id}`);
     }
   };
 
   render() {
+    const { history, initialValues } = this.props;
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -101,7 +114,14 @@ class EventForm extends Component {
               <Button positive type="submit">
                 Submit
               </Button>
-              <Button onClick={this.props.history.goBack} type="button">
+              <Button
+                onClick={
+                  initialValues.id
+                    ? () => history.push(`/events/${initialValues.id}`)
+                    : () => history.push("/events")
+                }
+                type="button"
+              >
                 Cancel
               </Button>
             </Form>
@@ -115,4 +135,4 @@ class EventForm extends Component {
 export default connect(
   mapState,
   actions
-)(reduxForm({ form: "eventForm" })(EventForm));
+)(reduxForm({ form: "eventForm", validate })(EventForm));
