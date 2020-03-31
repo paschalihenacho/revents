@@ -59,8 +59,9 @@ const createEvent = (state, payload) => {
 const updateEvent = (state, payload) => {
   return [
     ...state.filter(event => event.id !== payload.event.id),
-    payload.event]; //return array, spread the state, filter out event we are updating and
-    //add back in the updated event we are getting when we add back the form
+    payload.event
+  ]; //return array, spread the state, filter out event we are updating and
+  //add back in the updated event we are getting when we add back the form
 };
 
 const deleteEvent = (state, payload) => {

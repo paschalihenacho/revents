@@ -16,10 +16,10 @@ const actions = {
 };
 
 class EventDashboard extends Component {
-  state = {
-    isOpen: false,
-    selectedEvent: null
-  };
+  // state = {
+  //   isOpen: false,
+  //   selectedEvent: null
+  // };
 
   // handleIsOpenToggle = () => {
   //   this.setState(({ isOpen }) => ({
@@ -27,36 +27,36 @@ class EventDashboard extends Component {
   //   }));
   // }
 
-  handleCreateFormOpen = () => {
-    this.setState({
-      isOpen: true,
-      selectedEvent: null
-    });
-  };
+  // handleCreateFormOpen = () => {
+  //   this.setState({
+  //     isOpen: true,
+  //     selectedEvent: null
+  //   });
+  // };
 
-  handleFormCancelEvent = event => {
-    this.setState({
-      selectedEvent: event,
-      isOpen: true
-    });
-  };
+  // handleFormCancelEvent = event => {
+  //   this.setState({
+  //     selectedEvent: event,
+  //     isOpen: true
+  //   });
+  // };
 
-  handleCreateEvent = newEvent => {
-    newEvent.id = cuid();
-    newEvent.hostPhotoURL = "/assets/user.png";
-    this.props.createEvent(newEvent);
-    this.setState(({ events }) => ({
-      // ...this.state.events takes our array of events and spread them out.
-      isOpen: false
-    }));
-  };
+  // handleCreateEvent = newEvent => {
+  //   newEvent.id = cuid();
+  //   newEvent.hostPhotoURL = "/assets/user.png";
+  //   this.props.createEvent(newEvent);
+  //   this.setState(({ events }) => ({
+  //     // ...this.state.events takes our array of events and spread them out.
+  //     isOpen: false
+  //   }));
+  // };
 
-  handleSelectEvent = event => {
-    this.setState({
-      selectedEvent: event,
-      isOpen: true
-    });
-  };
+  // handleSelectEvent = event => {
+  //   this.setState({
+  //     selectedEvent: event,
+  //     isOpen: true
+  //   });
+  // };
 
   handleUpdateEvent = updatedEvent => {
     this.props.updateEvent(updatedEvent);
@@ -75,7 +75,7 @@ class EventDashboard extends Component {
   };
 
   render() {
-    const { isOpen, selectedEvent } = this.state;
+    // const { isOpen, selectedEvent } = this.state;
     const { events } = this.props;
     return (
       <Grid>

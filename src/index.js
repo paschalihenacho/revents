@@ -10,8 +10,6 @@ import ScrollToTop from './app/common/util/ScrollToTop';
 
 const store = configureStore();
 
-console.log(store.getState());
-
 const rootEl = document.getElementById("root");
 
 let render = () => {
