@@ -7,13 +7,15 @@ const PlaceInput = ({
   width,
   options,
   placeholder,
+  onSelect,
   meta: { touched, error }
 }) => {
   return (
     <PlacesAutocomplete
       value={value}
       onChange={onChange}
-      searchOptions={options}
+          searchOptions={options}
+          onSelect={onSelect}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <Form.Field error={touched && !!error}>
@@ -27,7 +29,14 @@ const PlaceInput = ({
             </Label>
           )}
           {suggestions.length > 0 && (
-            <Segment>
+            <Segment
+              style={{
+                marginTop: 0,
+                position: "absolute",
+                zIndex: 1000,
+                width: "100%"
+              }}
+            >
               {loading && <div>Loading...</div>}
               <List selection>
                 {suggestions.map(suggestion => (
