@@ -6,11 +6,7 @@ const AnyReactComponent = () => <Icon name="marker" size="big" color="red" />;
 
 class SimpleMap extends Component {
   static defaultProps = {
-    center: {
-      lat: 29.7249,
-      lng: -95.5599
-    },
-    zoom: 5
+    zoom: 8
   };
 
   render() {
@@ -23,7 +19,7 @@ class SimpleMap extends Component {
           defaultCenter={latlng}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent lat={29.7249} lng={-95.5599} />
+          <AnyReactComponent lat={latlng.lat} lng={latlng.lng} />
         </GoogleMapReact>
       </div>
     );

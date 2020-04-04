@@ -47,7 +47,7 @@ class TestComponent extends Component {
         <TestPlaceInput selectAddress={this.handleSelect}/>
         <br />
         <br />
-        <SimpleMap latlng={this.state.latlng} />
+        <SimpleMap key={this.state.latlng.lng} latlng={this.state.latlng} />
       </div>
     );
   }

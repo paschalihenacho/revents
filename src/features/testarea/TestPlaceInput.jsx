@@ -17,7 +17,7 @@ class TestPlaceInput extends React.Component {
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
-        onSelect={this.selectAddress}
+        onSelect={selectAddress}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
