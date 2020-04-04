@@ -1,3 +1,5 @@
+This application allows you to create and host events. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
