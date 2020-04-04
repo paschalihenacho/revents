@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Sat Apr 04 2020 02:18:56 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/modals/TestModal.jsx
+* src/features/testarea/TestComponent.jsx
+
+
+Created files:
+* .autogit/logs/log-4-3-2020-1-48-46.txt
+
+
+Deleted files:
+
+
+Renamed files:
