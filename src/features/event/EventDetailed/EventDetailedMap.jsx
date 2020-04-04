@@ -7,7 +7,7 @@ const Marker = () => <Icon name="marker" size="big" color="red" />;
 const EventDetailedMap = ({ lat, lng }) => {
     const zoom = 14;
     return (
-        <Segment attached='bottom'>
+        <Segment attached='bottom' style={{padding: 0}}>
             <div style={{ height: "350px", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyBbHotqLrTYF8Gr61DAuptaX-KH_Y1jbYk" }}
