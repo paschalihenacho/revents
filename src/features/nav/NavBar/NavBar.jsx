@@ -54,7 +54,7 @@ this.props.openModal('LoginModal')
           {authenticated ? (
             <SignedInMenu signOut={this.handleSignOut} />
           ) : (
-            <SignedOutMenu signIn={this.handleSignIn} register= />
+            <SignedOutMenu signIn={this.handleSignIn} register={this.handleRegisterModal} />
           )}
         </Container>
       </Menu>

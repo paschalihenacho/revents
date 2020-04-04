@@ -1,7 +1,7 @@
-import React from 'react';
-import { Form, Segment, Button } from 'semantic-ui-react';
-import { Field, reduxForm } from 'redux-form';
-import TextInput from 'app/common/form/TextInput';
+import React from "react";
+import { Form, Segment, Button } from "semantic-ui-react";
+import { Field, reduxForm } from "redux-form";
+import TextInput from "../../../app/common/form/TextInput";
 
 const RegisterForm = () => {
   return (
@@ -35,4 +35,4 @@ const RegisterForm = () => {
   );
 };
 
-export default reduxForm({form: 'registerForm'}) (RegisterForm);
+export default reduxForm({ form: "registerForm" })(RegisterForm);

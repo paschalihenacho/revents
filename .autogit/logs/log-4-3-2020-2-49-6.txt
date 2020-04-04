@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Sat Apr 04 2020 02:49:06 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/modals/modalManager.jsx
+* src/features/nav/NavBar/NavBar.jsx
+
+
+Created files:
+* .autogit/logs/log-4-3-2020-2-18-56.txt
+* src/features/auth/Login/LoginForm.jsx
+* src/features/auth/Register/RegisterForm.jsx
+* src/features/modals/LoginModal.jsx
+* src/features/modals/RegisterModal.jsx
+
+
+Deleted files:
+
+
+Renamed files:
