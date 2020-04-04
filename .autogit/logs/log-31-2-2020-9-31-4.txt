@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 31 2020 09:31:04 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/common/form/PlaceInput.jsx
+* src/features/event/EventForm/EventForm.jsx
+
+
+Created files:
+* .autogit/logs/log-31-2-2020-9-0-55.txt
+
+
+Deleted files:
+
+
+Renamed files:
