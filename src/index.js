@@ -21,6 +21,11 @@ let render = () => {
     <Provider store={store}>
       <BrowserRouter>
         <ScrollToTop>
+          <ReduxToastr
+            position='bottom-right'
+            transitionIn='fadeIn'
+            transitionOut='fadeOut'
+          />
         <App />
         </ScrollToTop>
       </BrowserRouter>

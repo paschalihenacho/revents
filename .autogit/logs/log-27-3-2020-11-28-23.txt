@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 27 2020 11:28:23 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/reducers/rootReducer.js
+* src/index.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

@@ -5,27 +5,46 @@ import {
   FETCH_EVENTS
 } from "./eventConstants";
 import {
-  asyncActionStart, asyncActionFinish, asyncActionError
+  asyncActionStart,
+  asyncActionFinish,
+  asyncActionError
 } from "../async/asyncActions";
 import {
   fetchSampleData
 } from "../../app/data/mockApi";
+import {
+  toastr
+} from "react-redux-toastr";
 
 export const createEvent = event => {
-  return {
-    type: CREATE_EVENT,
-    payload: {
-      event //payload.event
+  return async dispatch => {
+    try {
+      dispatch({
+        type: CREATE_EVENT,
+        payload: {
+          event //payload.event
+        }
+      })
+      toastr.success('Success!', 'Event has been created');
+    } catch (error) {
+      toastr.error('Oops', 'Something went wrong');
     }
   };
 };
 
 // action creator
 export const updateEvent = event => {
-  return {
-    type: UPDATE_EVENT,
-    payload: {
-      event
+  return async dispatch => {
+    try {
+      dispatch({
+        type: UPDATE_EVENT,
+        payload: {
+          event //payload.event
+        }
+      })
+      toastr.success('Success!', 'Event has been updated');
+    } catch (error) {
+      toastr.error('Oops', 'Something went wrong');
     }
   };
 };
@@ -40,20 +59,20 @@ export const deleteEvent = eventId => {
 };
 
 export const loadEvents = () => {
-    return async dispatch => {
-          try {
-            dispatch(asyncActionStart())
-            const events = await fetchSampleData();
-            dispatch({
-              type: FETCH_EVENTS,
-              payload: {
-                events
-              }
-            })
-            dispatch(asyncActionFinish())
-          } catch (error) {
-            console.log(error);
-            dispatch(asyncActionError())
-          }
-      }
+  return async dispatch => {
+    try {
+      dispatch(asyncActionStart())
+      const events = await fetchSampleData();
+      dispatch({
+        type: FETCH_EVENTS,
+        payload: {
+          events
+        }
+      })
+      dispatch(asyncActionFinish())
+    } catch (error) {
+      console.log(error);
+      dispatch(asyncActionError())
     }
+  }
+}
