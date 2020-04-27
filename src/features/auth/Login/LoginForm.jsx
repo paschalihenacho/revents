@@ -3,7 +3,6 @@ import { Form, Segment, Button } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import TextInput from "../../../app/common/form/TextInput";
 import { login } from '../authActions';
-import actions from "redux-form/lib/actions";
 import { connect } from "react-redux";
 
 const actions = {
