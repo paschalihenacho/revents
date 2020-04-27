@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 27 2020 12:28:43 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/features/event/EventDashboard/EventDashboard.jsx
+* src/features/event/EventDetailed/EventDetailedHeader.jsx
+* src/features/event/EventDetailed/EventDetailedInfo.jsx
+* src/features/event/EventList/EventListItem.jsx
+
+
+Created files:
+* .autogit/logs/log-27-3-2020-11-58-33.txt
+* src/features/event/EventActivity/EventActivity.jsx
+
+
+Deleted files:
+
+
+Renamed files:
