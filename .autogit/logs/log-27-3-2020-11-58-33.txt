@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 27 2020 11:58:33 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/app/data/sampleData.js
+* src/features/event/EventList/EventListItem.jsx
+* src/features/event/eventActions.js
+* src/index.js
+
+
+Created files:
+* .autogit/logs/log-27-3-2020-11-28-23.txt
+
+
+Deleted files:
+
+
+Renamed files:
