@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Fri May 08 2020 17:22:56 GMT-0500 (Central Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/reducers/rootReducer.js
+* src/app/store/configureStore.js
+
+
+Created files:
+* .autogit/logs/log-28-3-2020-0-30-2.txt
+* src/app/config/firebase.js
+
+
+Deleted files:
+
+
+Renamed files:

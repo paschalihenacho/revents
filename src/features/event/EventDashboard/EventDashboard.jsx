@@ -5,16 +5,17 @@ import EventList from "../EventList/EventList";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import EventActivity from "../EventActivity/EventActivity";
+import { firestoreConnect } from "react-redux-firebase";
 
-const mapState = state => ({
+const mapState = (state) => ({
   events: state.events,
-  loading: state.async.loading
+  loading: state.async.loading,
 });
 
 const actions = {
   createEvent,
   deleteEvent,
-  updateEvent
+  updateEvent,
 };
 
 class EventDashboard extends Component {
@@ -60,16 +61,16 @@ class EventDashboard extends Component {
   //   });
   // };
 
-  handleUpdateEvent = updatedEvent => {
+  handleUpdateEvent = (updatedEvent) => {
     this.props.updateEvent(updatedEvent);
     this.setState(({ events }) => ({
       isOpen: false,
-      selectedEvent: null
+      selectedEvent: null,
     }));
   };
 
   // #1 create the Method to delete an event
-  handleDeleteEvent = id => {
+  handleDeleteEvent = (id) => {
     // this.setState(({ events }) => ({
     //   events: events.filter(e => e.id !== id)
     // }));
@@ -79,7 +80,7 @@ class EventDashboard extends Component {
   render() {
     // const { isOpen, selectedEvent } = this.state;
     const { events, loading } = this.props;
-    if (loading) return <LoadingComponent/>
+    if (loading) return <LoadingComponent />;
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -97,4 +98,7 @@ class EventDashboard extends Component {
   }
 }
 
-export default connect(mapState, actions)(EventDashboard);
+export default connect(
+  mapState,
+  actions
+)(firestoreConnect([{ collection: "events" }])(EventDashboard));
